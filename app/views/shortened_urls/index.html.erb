@@ -1,0 +1,24 @@
+<h1>Your Shortened Urls</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shortened_urls.each do |shortened_url| %>
+      <tr>
+        <td><%= link_to shortened_url.target_url, shortened_url.target_url, target: :_blank %></td>
+        <td><%= link_to shortened_url.short_url(request.base_url), shortened_url.short_url(request.base_url), target: :_blank %></td>
+        <td><%= link_to 'Edit', edit_shortened_url_path(shortened_url) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shortened Url', new_shortened_url_path %>

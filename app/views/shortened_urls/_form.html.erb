@@ -1,0 +1,34 @@
+<%= form_with(model: shortened_url, local: true, html: { id: "form_id" }) do |form| %>
+  <% if shortened_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shortened_url.errors.count, "error") %> prohibited this shortened_url from being saved:</h2>
+
+      <ul>
+      <% shortened_url.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <p>
+      Target Url:
+      <%- if shortened_url.new_record? %>
+        <%= form.text_field :target_url %>
+      <%- else %>
+        <%= shortened_url.target_url %>
+      <%- end if %>
+    </p>
+    <%- unless shortened_url.new_record? %>
+      <p>
+        Short Url: <%= request.base_url %>/<%= form.text_field :short_path %>
+      </p>
+    <%- end if %>
+  </div>
+
+  <div class="actions">
+    <%= link_to shortened_url.new_record? ? 'Create' : 'Save', "#", onclick: "document.getElementById('form_id').submit()" %>
+    <%= link_to 'Delete', @shortened_url, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
