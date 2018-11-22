@@ -8,11 +8,6 @@ class ShortenedUrlsController < ApplicationController
     @shortened_urls = ShortenedUrl.where(user_id: current_user.id)
   end
 
-  # GET /shortened_urls/1
-  # GET /shortened_urls/1.json
-  def show
-  end
-
   # GET /shortened_urls/new
   def new
     @shortened_url = ShortenedUrl.new(user: current_user)

@@ -10,7 +10,7 @@
 
   <tbody>
     <% @shortened_urls.each do |shortened_url| %>
-      <tr>
+      <tr id="shortened-url-<%= shortened_url.id %>">
         <td><%= link_to shortened_url.target_url, shortened_url.target_url, target: :_blank %></td>
         <td><%= link_to shortened_url.short_url(request.base_url), shortened_url.short_url(request.base_url), target: :_blank %></td>
         <td><%= link_to 'Edit', edit_shortened_url_path(shortened_url) %></td>

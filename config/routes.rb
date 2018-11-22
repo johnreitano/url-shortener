@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   resources :shortened_urls
+  devise_for :users
+  resources :shortened_urls, except: [:show]
 
   root 'pages#welcome'
   get '/cannot-redirect', to: 'pages#cannot_redirect'#, as: 'cannot_redirect'
