@@ -1,24 +1,20 @@
-# README
+## Summary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Here are the preliminary results of the url shortener. This version is missing tests and good styling of the pages. Here is my contact info:
 
-Things you may want to cover:
+```
+John Reitano
+jreitano@gmail.com
+619-674-6211
+```
 
-* Ruby version
+## To start the server:
 
-* System dependencies
+Cd into the repo directory, and do the following
 
-* Configuration
+```
+bundle install
+rails server
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Then browse to http://localhost:3000
