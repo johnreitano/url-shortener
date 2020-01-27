@@ -1,12 +1,6 @@
 ## Summary
 
-Here are the preliminary results of the url shortener. This version is missing tests and good styling of the pages. Here is my contact info:
-
-```
-John Reitano
-jreitano@gmail.com
-619-674-6211
-```
+Here are the preliminary results of the url shortener. This version is missing tests and good styling of the pages. 
 
 ## To start the server:
 
